@@ -4,7 +4,7 @@
     private $host_name = "localhost";
     private $user_name = "root";
     private $password= "";
-    private $database_name= "exam_cell";
+    private $database_name= "ecautomationsystem";
 
 
 
