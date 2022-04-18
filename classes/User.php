@@ -36,11 +36,11 @@ function checkAdmin(){
     else
     return false;
 }
-/*function countRows($result){
+function countRows($result){
     $count=mysqli_num_rows($result);
     return $count;
 }
-*/
+
 /*function fetechRow($row){
     $result = mysqli_fetch_assoc($row);
     return $result;
@@ -50,15 +50,17 @@ function login(){
     if($this->checkAdmin())
     header('location:adminHomePage.php');
     else{
-        $sql = "SELECT * FROM `stinfo` WHERE id=".$this->id."' AND stpass='".$this->password."";
+        $sql = "SELECT * FROM stinfo WHERE id=".$this->getID()." AND stpass=".$this->getPassword()."";
         $conn=$this->connect();
         $result=mysqli_query($conn,$sql);
+        if( $count=mysqli_num_rows($result)>0){
         $row= mysqli_fetch_assoc($result);
         if($row['id']==$this->id&&$row['stpass']==$this->password){
                      header("location:studentHomePage.php?id=".$this->id."");
                  }
     
          }
+        }
         
     }
     function checkConnect(){
