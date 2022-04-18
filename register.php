@@ -51,23 +51,24 @@
 </form></div></div></fieldset></center>
 
 <?php 
-include_once "db/DatabaseConnect.php";
+include_once "./dbconnection.php";
 include_once "classes/student.php";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
   $Student = new student();
   
-  $Student->FN=$_REQUEST['newName'];
-  $Student->LN=$_REQUEST['newlast'];
-  $Student->PN=$_REQUEST['newPhone'];
-  $Student->EA=$_REQUEST['newMail'];
-  $Student->Ad=$_REQUEST['newAdd'];
-  $Student->Lvl=$_REQUEST['newLevel'];
-  $Student->Sem=$_REQUEST['newSem'];
+  $Student->setFirstName($_REQUEST['newName']);
+  $Student->setLastName($_REQUEST['newlast']);
+  $Student->setPhoneNumber($_REQUEST['newPhone']);
+  $Student->setEmail($_REQUEST['newMail']);
+  $Student->setAddress($_REQUEST['newAdd']);
+  $Student->setLevel($_REQUEST['newLevel']);
+  $Student->setSemster($_REQUEST['newSem']);
 
 if(isset($_POST['submit'])){
 $image=$_FILES['image'];
 $filename = $image['name'];
+$Student->setImage($filename);
 $fileerror = $image['error'];
 $filetemp = $image['tmp_name'];
 $fileext = explode('.', $filename);
@@ -76,9 +77,8 @@ $fileallowed = array('png', 'jpg' , 'jpeg');
 if (in_array($filecheck,$fileallowed)) {
     $dest='reg_pic/'.$filename;
     move_uploaded_file($filetemp,$dest); }
-
  }
-$Student->signup($Student->FN,$Student->LN,$Student->PN,$Student->EA,$Student->Ad,$Student->Lvl,$Student->Sem,$filename);
+$Student->signup();
 
 }?> 
 

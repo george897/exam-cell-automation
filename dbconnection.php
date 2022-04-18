@@ -17,6 +17,22 @@
         return $conn;
             
         } 
-
+        
+        protected function checkConncetion($sql){
+            $conn = $this->connect();
+            if($conn)
+             return true;
+            
+            else
+            return false;
+        }
+        protected function checkQuery($sql){
+            $conn = $this->connect();
+            $result=mysqli_query($conn,$sql);
+            if($result)
+            return true;
+            else
+            return false;
+        }
 }
 ?>

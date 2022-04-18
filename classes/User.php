@@ -1,6 +1,5 @@
 <?php
-
-
+//include_once "./dbconncetion.php";
 class User extends dbconnection{
 private $ssn;
 private $id;
