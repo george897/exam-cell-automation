@@ -63,8 +63,9 @@ private function registerationMessage(){
     return $message;
 }
 public function signup(){  
-    $sql ="INSERT INTO `register`(stname,stemail,stadd,stphone,stimg,lname) 
-    VALUES ('".$this->getFirstName()."','".$this->getEmail()."','".$this->getAddress()."','".$this->getPhoneNumber()."','".$this->getImage()."','".$this->getLastName()."')";
+    $sql ="INSERT INTO `register`(stname,stemail,stadd,stphone,stimg,lname,level,semester) 
+    VALUES ('".$this->getFirstName()."','".$this->getEmail()."','".$this->getAddress()."','".$this->getPhoneNumber()."','".$this->getImage()."','".$this->getLastName()."'
+    ,".$this->getLevel().",".$this->getSemster().")";
     if ($this->checkConncetion($sql)) {
         if($this->checkQuery($sql))
             echo "<script type='text/javascript'>alert('".$this->registerationMessage()."');</script>"; 

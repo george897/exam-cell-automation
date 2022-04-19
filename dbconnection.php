@@ -18,7 +18,7 @@
             
         } 
         
-        protected function checkConncetion($sql){
+        protected function checkConncetion(){
             $conn = $this->connect();
             if($conn)
              return true;
@@ -27,12 +27,18 @@
             return false;
         }
         protected function checkQuery($sql){
-            $conn = $this->connect();
-            $result=mysqli_query($conn,$sql);
-            if($result)
+            if($this->doQuery($sql))
             return true;
             else
             return false;
+        }
+        protected function countRows($sql){
+            $count=mysqli_num_rows($this->doQuery($sql));
+            return $count;
+        }
+        protected function doQuery($sql){
+            $result=$this->connect()->query($sql);
+            return $result;
         }
 }
 ?>

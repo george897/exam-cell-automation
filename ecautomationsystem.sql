@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2022 at 06:07 PM
+-- Generation Time: Apr 19, 2022 at 04:05 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -51,15 +51,19 @@ CREATE TABLE `register` (
   `stemail` varchar(50) NOT NULL,
   `stadd` varchar(50) NOT NULL,
   `stphone` varchar(50) NOT NULL,
-  `stimg` blob NOT NULL
+  `stimg` blob NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `level` int(50) NOT NULL,
+  `semester` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `register`
 --
 
-INSERT INTO `register` (`ssn`, `stname`, `stemail`, `stadd`, `stphone`, `stimg`) VALUES
-(1, 'erf', 'wert', 'erg', 'wreg', '');
+INSERT INTO `register` (`ssn`, `stname`, `stemail`, `stadd`, `stphone`, `stimg`, `lname`, `level`, `semester`) VALUES
+(18, 'george', 'joga0559@gmail.com', '111', '111', 0x3231303834373834345f3631313338343236303236353433375f343339323736303039393933393133303838315f6e2e6a7067, 'ttt', 1, 1),
+(19, 'mariam', 'mairam', '111', '111', 0x3235393132383136355f3435333238373033323838353134305f313437333935313635343735323433393638355f6e2e6a7067, 'osama', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -72,13 +76,6 @@ CREATE TABLE `stinfo` (
   `ssn` int(11) NOT NULL,
   `stpass` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `stinfo`
---
-
-INSERT INTO `stinfo` (`id`, `ssn`, `stpass`) VALUES
-(2, 1, '2');
 
 -- --------------------------------------------------------
 
@@ -129,7 +126,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `ssn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ssn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `stinfo`
