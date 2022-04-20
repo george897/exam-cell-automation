@@ -23,7 +23,7 @@
 
 
 	    <button class="view" ><a  href="veiwRegisteration.php">registrations</a></button>
-		<button class="add_st"><a href="add_student.php">Add Student</a></button>
+		<button class="add_st"><a href="veiwAddStudent.php">Add Student</a></button>
 	    <button class="add_ms"><a href="Search.php">Add Marksheet</a></button>
 
 </form>

@@ -1,6 +1,7 @@
 <?php
 //include_once ("./dbconncection");
 class student extends dbconnection{
+private $id;    
 private $firstName;
 private $lastName;
 private $email;
@@ -10,6 +11,10 @@ private $level;
 private $semster;
 private $image;
 
+
+public function setId($id){
+    $this->id=$id;
+}
 public function setFirstName($firstName){
     $this->firstName=$firstName;
 }
@@ -33,6 +38,9 @@ public function setSemster($semster){
 }
 public function setImage($image){
     $this->image=$image;
+}
+public function getId(){
+    return $this->id;
 }
 public function getFirstName(){
     return $this->firstName;
@@ -72,8 +80,6 @@ public function signup(){
     } else {
         echo "Error";
     }
-    
     }
-
 }
 ?>
