@@ -1,0 +1,57 @@
+body
+{
+    margin: 0px;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) , url('d9afb2f0c922f34cb6ae8ad219f53ca3.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 800px;
+}
+#one li:first-child
+{
+    color: white;
+    font-style: italic;
+    margin-left: 0;
+    text-align: left;
+    font-size: 40px;
+}
+#one
+{
+    background-color: #81bae080;
+    height: 70px;
+    font-size: 30px;
+    padding: 1px;
+}
+#one ul
+{
+    list-style: none;
+    margin-top: 7px;
+   
+}
+#one ul li
+{
+    display: inline;
+    margin: 40px;
+    text-align: right;
+}
+.home
+{
+    color: white;
+    padding: 23px;
+    background-color: rgba(0,0,0,0.7);
+}
+span
+{
+  color: hotpink;
+}
+a
+{
+    color: white;
+    text-decoration: none;
+}
+a:hover
+{
+    color:aqua;
+    background-color:rgba(0,0,0,0.7) ;
+    cursor: pointer;
+    padding: 24px;
+}
+
